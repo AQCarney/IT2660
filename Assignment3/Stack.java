@@ -1,4 +1,4 @@
-package Assginment3;
+package Assignment3;
 
 import Assignment2.StudentListing;
 
