@@ -1,37 +1,22 @@
 package Assignment6;
 
 public class MergeSort {
-    void merge(int arr[], int a, int b, int c){
-        int n1 = b - a + 1;
-        int n2 = c - b;
+    public static void mergeSort(int[] sort){
+        if (sort.length > 1){
+            int[] oneHalf = new int[sort.length /2];
+            System.arraycopy(sort,0, oneHalf, 0, sort.length / 2);
+            mergeSort(oneHalf);
 
-        int L [] = new int[n1];
-        int R [] = new int[n2];
+            int otherHalfLenght = sort.length - sort.length /2;
+            int[] otherhalf = new int[otherHalfLenght];
+            System.arraycopy(sort, sort.length / 2, otherhalf, 0, otherHalfLenght);
+            mergeSort(otherhalf);
 
-        for (int i = 0; i < n1; i++)
-        L[i] = arr[a + i];
-        for (int j = 0; j < n2; j++)
-        R[j] = arr[b + 1 + j];
-
-        int i = 0, j =0;
-
-        int k = a;
-        while (i < n1 && j < n2){
-            if (L[i] <= R[j]){
-                arr[k] = L[i];
-                i++;
-            }
-            else {
-                arr[k] = R[j];
-                j++;
-            }
-            k++;
+            merge(oneHalf, otherhalf, sort);
         }
-        while (j < n2) {
-            arr[k] = R[j];
-            j++;
-            k++;
-        }
+    }
+
+    private static void merge(int[] oneHalf, int[] otherhalf, int[] sort) {
     }
     
 }
