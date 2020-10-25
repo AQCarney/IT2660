@@ -19,6 +19,9 @@ public class StudentListing {
         StudentListing clone = new StudentListing(name, number, average);
         return clone;
     }
+    public String getKey(){
+        return name;
+    }
     public int compareTo(String targetKey){
         return(name.compareTo(targetKey));
     }
@@ -28,4 +31,5 @@ public class StudentListing {
         average = JOptionPane.showInputDialog("Enter the GPA");
     }
 
-}
+	}
+
